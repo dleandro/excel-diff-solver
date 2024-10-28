@@ -1,10 +1,18 @@
 [package]
-name = "excel-diff-solver"
+name = "excel-merger"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "app"
+path = "src/app.rs"
 
 [dependencies]
 calamine = "0.16.2"
 xlsxwriter = "0.6.0"
+scopeguard = "1.1"
+thiserror = "1.0"
+
+[[test]]
+name = "app_integration_test"
+path = "tests/app_integration_test.rs"
